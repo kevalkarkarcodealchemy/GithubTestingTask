@@ -1,0 +1,27 @@
+const Color = {
+  Black: '#000',
+  Blue: '#080c48',
+  Gray: '#8A8E9C',
+  White: '#ffffff',
+  Red: '#ff0000ff',
+  Dark_Gray: '#777',
+  Green: '#008000',
+  Silver: '#A2A3B9',
+  Dark_Blue: '#111827',
+  Gray_Dark: '#64748B',
+  Blue_Lite: '#2563EB',
+  Gray_Blue: '#9CA3AF',
+  Muted_Blue: '#334155',
+  Blue_gray: '#E2E8F0',
+  Bright_Gray: '#E5E7EB',
+  Bright_Blue: '#2F58E2',
+  Gray_Light: '#CBD5E1',
+  Burnt_Orange: '#CC5500',
+  PlatinumDark: '#dcd7dc',
+  Quill_Gray: '#dcdbd690',
+  Bright_Cyan: '#00E5FF',
+  Turquoise_Green: '#59fac7',
+  Transparent_Black: '#0000004d',
+};
+
+export default Color;
