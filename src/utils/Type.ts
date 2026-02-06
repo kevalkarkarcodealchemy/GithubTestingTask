@@ -1,5 +1,5 @@
-import {ViewStyle} from 'react-native';
-import {SvgProps} from 'react-native-svg';
+import { ViewStyle } from "react-native";
+import { SvgProps } from "react-native-svg";
 
 export type RootStackParamList = {
   Login: undefined;
@@ -28,7 +28,7 @@ export interface UserProfile {
   company: Company;
 }
 
-type ButtonVariant = 'text' | 'outlined' | 'contained' | 'elevated';
+type ButtonVariant = "text" | "outlined" | "contained" | "elevated";
 
 export type CustomButtonProps = {
   title: string;
@@ -41,6 +41,7 @@ export type CustomButtonProps = {
 
 export type DataFieldCardProps = {
   renderData: UserProfile;
+  onPress?: () => void;
 };
 export type DataFieldCardProps1 = {
   renderData: string;
@@ -72,9 +73,15 @@ export type UserCredentialType = {
   password: string;
 };
 
-export interface Action {
+export type Action = {
   type: string;
   payload: string;
-}
+};
 
-export type ApiMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+export type UserDetailModalProps = {
+  visible: boolean;
+  onClose: () => void;
+  userData: UserProfile | null;
+};
+
+export type ApiMethod = "GET" | "POST" | "PUT" | "DELETE";

@@ -1,13 +1,14 @@
-import React, {memo} from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
-import {FillHeart, Heart} from '../assets/svg';
-import {DataFieldCardProps} from '../utils/Type';
-import ApplicationStyles from '../theme/ApplicationStyle';
-import {moderateScale} from 'react-native-size-matters';
-import {HEIGHT} from '../theme/Font';
+import React, { memo } from "react";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { FillHeart, Heart } from "../assets/svg";
+import { DataFieldCardProps } from "../utils/Type";
+import ApplicationStyles from "../theme/ApplicationStyle";
+import { moderateScale } from "react-native-size-matters";
+import { HEIGHT } from "../theme/Font";
 
-const DataFieldCard = memo(({renderData}: DataFieldCardProps) => {
-  const {firstName, lastName, image, company} = renderData;
+const DataFieldCard = memo(({ renderData, onPress }: DataFieldCardProps) => {
+  const { firstName, lastName, image, company } = renderData;
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.imageContainer}>
@@ -18,7 +19,7 @@ const DataFieldCard = memo(({renderData}: DataFieldCardProps) => {
           style={styles.image}
         />
       </View>
-      <View style={styles.userDetail}>
+      <TouchableOpacity style={styles.userDetail} onPress={onPress}>
         <View style={styles.userInnerDetail}>
           <Text style={styles.companyNameText}>{company.name}</Text>
           <Text style={styles.userNameText}>
@@ -31,7 +32,7 @@ const DataFieldCard = memo(({renderData}: DataFieldCardProps) => {
         <View style={styles.heartContainer}>
           {renderData.id % 2 === 0 ? <FillHeart /> : <Heart />}
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 });
@@ -51,13 +52,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heartContainer: {
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
   },
   imageContainer: {
-    overflow: 'hidden',
+    overflow: "hidden",
     width: moderateScale(54),
     height: HEIGHT.h54,
-    borderRadius: '50%',
+    borderRadius: "50%",
   },
   userNameText: {
     ...ApplicationStyles.cardMainTitle,
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   image: {
     ...ApplicationStyles.fullSize,
-    resizeMode: 'cover',
+    resizeMode: "cover",
   },
 });
 
